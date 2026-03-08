@@ -1,0 +1,52 @@
+{
+    "name": "vscode-extension-ascii-sketch",
+    "displayName": "ASCII Art Editor",
+    "description": "An extension to edit ASCII art with Monaco editor.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.90.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [],
+    "main": "./out/extension.js",
+    "contributes": {
+        "languages": [
+            {
+                "id": "ascii-art",
+                "extensions": [
+                    ".ascii"
+                ]
+            }
+        ],
+        "commands": [
+            {
+                "command": "ascii-art.createCanvas",
+                "title": "ASCII Art: Create Canvas"
+            },
+            {
+                "command": "ascii-art.generateBox",
+                "title": "ASCII Art: Generate Box"
+            },
+            {
+                "command": "ascii-art.alignBox",
+                "title": "ASCII Art: Align Box"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "test": "ts-mocha tests/**/*.test.ts"
+    },
+    "devDependencies": {
+        "@types/mocha": "^10.0.10",
+        "@types/node": "20.x",
+        "@types/vscode": "^1.90.0",
+        "mocha": "^11.7.5",
+        "ts-mocha": "^11.1.0",
+        "typescript": "^5.4.5"
+    }
+}
