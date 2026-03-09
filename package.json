@@ -1,8 +1,13 @@
 {
     "name": "vscode-extension-ascii-sketch",
+    "publisher": "AkiEga",
     "displayName": "ASCII Art Editor",
     "description": "An extension to edit ASCII art with Monaco editor.",
     "version": "0.0.1",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/AkiEga/vscode-extension-ascii-sketch"
+    },
     "engines": {
         "vscode": "^1.90.0"
     },
@@ -45,7 +50,9 @@
         "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./",
-        "test": "ts-mocha tests/**/*.test.ts"
+        "test": "ts-mocha tests/**/*.test.ts",
+        "package": "vsce package",
+        "publish": "vsce publish"
     },
     "devDependencies": {
         "@types/mocha": "^10.0.10",
@@ -53,6 +60,7 @@
         "@types/vscode": "^1.90.0",
         "mocha": "^11.7.5",
         "ts-mocha": "^11.1.0",
-        "typescript": "^5.4.5"
+        "typescript": "^5.4.5",
+        "@vscode/vsce": "^3.2.1"
     }
 }
